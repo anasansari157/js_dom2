@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Model</title>
+		<style>
+			.container {
+				padding: 0 220px;
+				display: flex;
+				justify-content: space-evenly;
+				flex-wrap: wrap;
+				margin-bottom: 50px;
+			}
+			button {
+				margin-top: 20px;
+				margin-bottom: 50px;
+				padding: 10px 25px;
+			
+			}
+			.row {
+				width: 100%;
+				height: 500px;
+			}
+			h1 {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body onload="images()">
+		<h1>Click on the Button to see Details</h1>
+		<section class="container"></section>
+		<script>
+			function images() {
+				for (let i = 0; i < data.length; i++) {
+					let div = document.createElement("div");
+					div.style.backgroundImage = `url(${data[i].image})`;
+                    div.style.backgroundRepeat = "no-repeat";
+					div.classList.add("row");
+					let infoButton = document.createElement("button");
+					infoButton.innerHTML = "See Details";
+					infoButton.classList.add("button");
+					infoButton.addEventListener("click", () => {
+					});  
+					document
+						.querySelector(".container")
+						.append(div, infoButton);
+				}
+				localStorage.setItem("now", Date.now());
+
+				
+			}
+			let data = [
+				{
+					image:
+						"http://data.mavo.io/portfolio/images/pasted-image-1494464667397.png",
+					name: "Carwash",
+					category: "Painting"
+				},
+				{
+					image:
+						"http://data.mavo.io/portfolio/images/pasted-image-1494528264937.png",
+					name: "Muck Mouth",
+					category: "Painting"
+				},
+				{
+					image:
+						"http://data.mavo.io/portfolio/images/pasted-image-1494528646446.png",
+					name: "Fishwall",
+					category: "Painting"
+				},
+				{
+					image:
+						"http://data.mavo.io/portfolio/images/web-coffe-marilyn.jpg",
+					name: "Web Coffe Marilyn",
+					category: "Painting"
+				},
+				{
+					image:
+						"http://data.mavo.io/portfolio/images/pasted-image-1494903924970.png",
+					name: "Web 3 Jules",
+					category: "Painting"
+				},
+				{
+					image:
+						"http://data.mavo.io/portfolio/images/web-electric3.jpg",
+					name: "Web electric3",
+					category: "Painting"
+				}
+			];
+		</script>
+	</body>
+</html>
