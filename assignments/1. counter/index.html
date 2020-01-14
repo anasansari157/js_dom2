@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Basic Counter App</title>
+    <link rel="stylesheet" href="main.css">
   </head>
-  <body></body>
+  <body>
+    <section class = 'calculator'>
+      <div class="result"> 0</div>
+      <div>
+        <button class="add btn">INCREMENT</button>
+        <button class="sub btn">DECREMENT</button>
+        <button class="reset btn"> RESET</button>
+
+      </div>
+
+    </section>
+    <script>
+    var add  = document.querySelector('.add ');
+var sub = document.querySelector('.sub ');
+var reset= document.querySelector('.reset '); 
+var result = document.querySelector('.result');
+var resultstore = 0;
+
+
+function increase() {
+    resultstore += 1;
+    result.innerHTML = resultstore;
+}
+function decrease() {
+    resultstore -= 1;
+    result.innerHTML = resultstore;
+}
+function reset0() {
+    resultstore = 0;
+    result.innerHTML = resultstore;
+}
+
+
+add.addEventListener('click', increase);
+sub.addEventListener('click', decrease);
+reset.addEventListener('click', reset0);
+    </script>
+  </body>
 </html>

@@ -4,11 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="./style.css"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Todo</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1 class="heading">todos</h1>
+    <section>
+      <div class="list-conatiner">
+        <input type="text" class="datainput" value="" autocomplete="off" name="input" placeholder="What needs to be done?" >
+        <ul></ul>
+
+        <!-- footer -->
+        <div class="display">
+          <footer class="footerContainer">
+            <span class="itemleft">itemleft</span>
+            <div class = "taskinfo">
+              <span class="all border"> All</span>
+              <span class="active border">Active</span>
+              <span class="complete border">Completed</span>
+            </div>
+            <span class="clearall">Clear completed</span>
+            
+          </footer>
+        </div>
+        
+      </div>
+    </section>
+    
     <script src="./main.js"></script>
   </body>
 </html>

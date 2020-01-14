@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+        
+        form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        input {
+            display: block;
+            margin: 1rem;
+        }
+
+        h6 {
+            margin-top: 0;
+            display: none;
+        }
+ 
+    </style>
+</head>
+
+<body>
+
+    <h1>Sign Up</h1>
+    <form action="" name="signUpform" onsubmit="validation()">
+
+        <input type="text" placeholder="Full Name">
+        <h6 class="nameError">Name can't be empty!</h6>
+
+        <input type="email" placeholder="Email">
+        <h6 class="emailError">Email can't be empty!</h6>
+
+        
+        <input type="password" placeholder="Password">
+        <h6 class="passwordError">Password can't be empty!</h6>
+
+        <input type="submit" value="Sign Up" >
+        
+    </form>  
+
+
+    <script>
+        document.querySelector("input").addEventListener("keyup", update);
+
+        let name = document.querySelector("input[type =text]");
+        let email = document.querySelector("input[type =email]");
+        let password = document.querySelector("input[type =password]");
+
+
+        function update(event) {
+            if(event.target == name) {
+            name.value = event.target.value;
+            }
+
+            else if(event.target == email) {
+                email.value = event.target.value;
+            }
+
+            else if(event.target = password) {
+                password.value = event.target.value;
+            }
+        }
+
+        function displayNameError() {
+            document.querySelector(".nameError").style.display = "block";
+        }
+
+        function displayEmailError() {
+            document.querySelector(".emailError").style.display = "block";            
+        }
+
+        function displayPasswordError() {
+            document.querySelector(".passwordError").style.display = "block";
+        }
+
+        function displayAllError() {
+            document.querySelector(".nameError").style.display = "block";
+            document.querySelector(".emailError").style.display = "block";        
+            document.querySelector(".passwordError").style.display = "block";    
+        }
+
+        function hideAllErrors() {
+            document.querySelector(".nameError").style.display = "none";
+            document.querySelector(".emailError").style.display = "none";        
+            document.querySelector(".passwordError").style.display = "none";
+        }
+
+
+        function validation() {
+            if((name.value == null || name.value == "") && (email.value == null || email.value == "") && (password.value == null || password.value == "")) {
+                displayAllError();
+                return false;
+
+            }
+
+            else if(name.value == null || name.value == "") {
+                displayNameError();
+
+            }
+
+            else if(email.value == null || email.value == "") {
+                displayEmailError();
+
+            }
+
+            else if(password.value == null || password.value == "") {
+                displayPasswordError();
+
+            }
+            
+            else {
+                document.querySelector("h1").style.display = "none";
+                document.querySelector("form").style.display = "none";
+
+                alert(`You are ${name.value}. Your email: ${email.value} and password is ${password.value}`)
+            }
+        }
+    </script>
+</body>
+</html>
